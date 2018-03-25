@@ -1,5 +1,11 @@
 # データベース設計 #
 
+### 設計書 ###
+- not null    => NOT NULL制約
+- unique      => 一意性制約
+- foreign_key => 外部キー
+- index       => インデックスを貼る
+
 ## messages ##
 
 |column|type|option|
@@ -24,24 +30,23 @@
 
 ### Association ###
 - has_many :messages
-- has_many :groups through: :group_users
+- has_many :groups, through: :group_users
 - has_many :group_users
 
 
 ## groups ##
 
-* Deployment instructions
 |column|type|option|
 |:-----|:---|:----:|
-|name|string|not null|
+|name|string|not null, unique|
 
 ### Association ###
 - has_many :messages
-- has_many :users through: :group_users
+- has_many :users, through: :group_users
 - has_many :group_users
 
 
-## group_users ##
+## group_users(中間テーブル) ##
 
 |column|type|option|
 |:-----|:---|:----:|
