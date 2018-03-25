@@ -46,7 +46,7 @@
 - has_many :group_users
 
 
-## group_users(中間テーブル) ##
+## groups_users(中間テーブル) ##
 
 |column|type|option|
 |:-----|:---|:----:|
