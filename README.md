@@ -1,24 +1,58 @@
-# README
+# データベース設計 #
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### 設計書 ###
+- not null    => NOT NULL制約
+- unique      => 一意性制約
+- foreign_key => 外部キー
+- index       => インデックスを貼る
 
-Things you may want to cover:
+## messages ##
 
-* Ruby version
+|column|type|option|
+|:-----|:---|:----:|
+|body|text||
+|image|string||
+|group|references|foreign_key|
+|user|references|foreign_key|
 
-* System dependencies
+### Association ###
+- belongs_to :user
+- belongs_to :group
 
-* Configuration
 
-* Database creation
+## users ##
 
-* Database initialization
+|column|type|option|
+|:-----|:---|:----:|
+|name|string|not null|
+|email|text|not_null, unique|
+|password|string|not null|
 
-* How to run the test suite
+### Association ###
+- has_many :messages
+- has_many :groups, through: :group_users
+- has_many :group_users
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## groups ##
 
-* ...
+|column|type|option|
+|:-----|:---|:----:|
+|name|string|not null, unique|
+
+### Association ###
+- has_many :messages
+- has_many :users, through: :group_users
+- has_many :group_users
+
+
+## groups_users(中間テーブル) ##
+
+|column|type|option|
+|:-----|:---|:----:|
+|user|references|not null, foreign_key|
+|group|references|not null, foreign_key|
+
+### Association ###
+- belongs_to :user
+- belongs_to :group
