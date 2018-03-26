@@ -12,8 +12,8 @@
 |:-----|:---|:----:|
 |body|text||
 |image|string||
-|group_id|references|foreign_key|
-|user_id|references|foreign_key|
+|group|references|foreign_key|
+|user|references|foreign_key|
 
 ### Association ###
 - belongs_to :user
@@ -50,8 +50,8 @@
 
 |column|type|option|
 |:-----|:---|:----:|
-|user_id|references|not null, foreign_key|
-|group_id|references|not null, foreign_key|
+|user|references|not null, foreign_key|
+|group|references|not null, foreign_key|
 
 ### Association ###
 - belongs_to :user
