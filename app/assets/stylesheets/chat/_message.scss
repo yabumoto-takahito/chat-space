@@ -1,0 +1,28 @@
+.contents {
+  background-color: #AAAAAA;
+  height: calc(100vh - 100px - 90px);
+  padding: 46px 40px 0 40px;
+  .message-content {
+    margin-bottom: 40px;
+    &__top {
+      display: flex;
+      &--name {
+        color: #434A54;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      &--date {
+        padding-left: 10px;
+        color: #999999;
+        font-size: 12px;
+      }
+    }
+    &__bottom {
+      margin-top: 10px;
+      &--text {
+        color: #434A54;
+        font-weight: 14px;
+      }
+    }
+  }
+}
