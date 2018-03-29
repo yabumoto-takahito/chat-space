@@ -3,16 +3,13 @@
   height: calc(100vh - 100px);
   width: 260px;
   padding: 0 20px;
-
   .group {
     width: 260px;
     padding: 20px 0;
-
     &__name {
       color: #FFFFFF;
       font-size: 15px;
     }
-
     &__message {
       color: #FFFFFF;
       font-size: 11px;
