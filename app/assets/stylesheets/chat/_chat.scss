@@ -1,3 +1,6 @@
-@import "./chat/header";
-@import "./chat/message";
-@import "./chat/form";
+.chat {
+  width: calc(100vw - 300px);
+  @import "./chat/header";
+  @import "./chat/message";
+  @import "./chat/form";
+}

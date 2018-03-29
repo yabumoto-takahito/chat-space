@@ -1,4 +1,4 @@
-.header {
+.user {
   background-color: #253141;
   height: 100px;
   width: 260px;
@@ -12,6 +12,7 @@
   }
   &__lists {
     float: right;
+    // display: flex;
     &--list {
       display: inline-block;
       color: #FFFFFF;

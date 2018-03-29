@@ -5,3 +5,7 @@
 
 @import "chat/chat";
 @import "side-bar/side-bar";
+
+body {
+  display: flex;
+}
