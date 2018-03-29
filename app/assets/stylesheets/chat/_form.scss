@@ -1,0 +1,33 @@
+.form {
+  display: flex;
+  box-sizing: border-box;
+  background-color: #DDDDDD;
+  height: 90px;
+  padding: 20px 40px;
+  &__message {
+    background-color: #FFFFFF;
+    box-sizing: border-box;
+    float: left;
+    height: 50px;
+    width: calc(100% - 150px);
+    padding-left: 0 10px;
+  }
+  &__icon {
+    background-color: #FFFFFF;
+    float: left;
+    height: 50px;
+    padding-right: 10px;
+    .far {
+      line-height: 50px;
+      font-size: 20px;
+    }
+  }
+  &__submit {
+    background-color: #38AEF0;
+    color: #FFFFFF;
+    font-size: 16px;
+    height: 50px;
+    line-height: 50px;
+    float: right;
+  }
+}
