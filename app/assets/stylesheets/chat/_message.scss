@@ -9,20 +9,20 @@
     &__top {
       display: flex;
       &--name {
-        color: #434A54;
+        color: $color-chat-main;
         font-size: 16px;
         font-weight: bold;
       }
       &--date {
         padding-left: 10px;
-        color: #999999;
+        color: $color-chat-sub;
         font-size: 12px;
         line-height: 24px;
       }
     }
     &__bottom {
       &--text {
-        color: #434A54;
+        color: $color-chat-main;
         font-weight: 14px;
         margin-top: 10px;
       }

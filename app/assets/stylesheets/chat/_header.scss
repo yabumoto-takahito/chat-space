@@ -11,7 +11,7 @@
       margin-top: 35px;
     }
     ul {
-      color: #999999;
+      color: $color-chat-sub;
       font-size: 12px;
       margin-top: 15px;
       display: flex;
@@ -22,7 +22,7 @@
   }
   .right-header {
     color: #38AEF0;
-    border: solid 1px #38AEF0;
+    border: solid 1px $background-color-accent;
     height: 40px;
     padding: 0 20px;
     margin: 28px 40px 0 0;
@@ -30,7 +30,7 @@
     float: right;
     a {
       text-decoration: none;
-      color: #38AEF0;
+      color: $background-color-accent;
     }
   }
 }
