@@ -7,11 +7,11 @@
     width: 260px;
     padding: 20px 0;
     &__name {
-      color: #FFFFFF;
+      color: $color-side-bar;
       font-size: 15px;
     }
     &__message {
-      color: #FFFFFF;
+      color: $color-side-bar;
       font-size: 11px;
       margin-top: 5px;
     }

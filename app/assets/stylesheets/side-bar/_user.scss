@@ -4,7 +4,7 @@
   width: 260px;
   padding: 0 20px;
   &__name {
-    color: #FFFFFF;
+    color: $color-side-bar;
     font-size: 16px;
     font-weight: bold;
     line-height: 100px;
@@ -15,7 +15,7 @@
     // display: flex;
     &--list {
       display: inline-block;
-      color: #FFFFFF;
+      color: $color-side-bar;
       font-size: 20px;
       line-height: 100px;
     }
