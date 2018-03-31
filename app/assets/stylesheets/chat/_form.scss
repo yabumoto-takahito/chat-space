@@ -1,0 +1,38 @@
+.form {
+  display: flex;
+  background-color: #DDDDDD;
+  height: 90px;
+  &__message {
+    background-color: white;
+    color: $color-chat-main;
+    box-sizing: border-box;
+    float: left;
+    height: 50px;
+    width: calc(100vw - 505.34px);
+    padding-left: 10px;
+    margin: 20px 0 20px 40px;
+    border: none;
+  }
+  &__icon {
+    background-color: white;
+    float: left;
+    height: 50px;
+    padding-right: 10px;
+    margin: 20px 0;
+    .far {
+      line-height: 50px;
+      font-size: 20px;
+    }
+  }
+  &__submit {
+    background-color: $background-color-accent;
+    color: #FFFFFF;
+    font-size: 16px;
+    height: 50px;
+    line-height: 50px;
+    margin: 20px 40px 20px 15px;
+    padding: 0 20px;
+    float: right;
+    border: none;
+  }
+}
