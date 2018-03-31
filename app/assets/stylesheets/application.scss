@@ -1,12 +1,16 @@
 @import "./reset";
 @import "./variable";
 @import "./color";
-
 @import "font-awesome";
 
 @import "./flash-message";
-@import "chat/chat";
-@import "side-bar/side-bar";
+
+@import "./chat/header";
+@import "./chat/message";
+@import "./chat/form";
+
+@import"./side-bar/user";
+@import"./side-bar/groups";
 
 body {
   display: flex;
