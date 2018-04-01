@@ -1,9 +1,10 @@
-.side-bar
-  = render partial: "messages/side-bar"
 .chat
-  .header
-    = render partial: "messages/header"
-  .message
-    = render partial: "messages/message"
-  .form
-    = render partial: "messages/form"
+  .side-bar
+    = render partial: "messages/side-bar"
+  .content
+    .header
+      = render partial: "messages/header"
+    .message
+      = render partial: "messages/message"
+    .form
+      = render partial: "messages/form"
