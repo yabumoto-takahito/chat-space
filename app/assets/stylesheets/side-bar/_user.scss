@@ -13,11 +13,13 @@
   &__lists {
     float: right;
     // display: flex;
-    &--list {
+    .list {
       display: inline-block;
-      color: $color-side-bar;
       font-size: 20px;
       line-height: 100px;
+      .icon {
+        color: $color-side-bar;
+      }
     }
   }
 }
