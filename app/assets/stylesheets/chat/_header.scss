@@ -1,5 +1,5 @@
 .header {
-  background-color: white;
+  background-color: $white;
   height: 100px;
   width: calc(100vw - 300px);
   .left-header {
@@ -11,7 +11,7 @@
       margin-top: 35px;
     }
     ul {
-      color: $color-chat-sub;
+      color: $light_gray;
       font-size: 12px;
       margin-top: 15px;
       display: flex;
@@ -22,7 +22,7 @@
   }
   .right-header {
     color: #38AEF0;
-    border: solid 1px $background-color-accent;
+    border: solid 1px $light_blue;
     height: 40px;
     padding: 0 20px;
     margin: 28px 40px 0 0;
@@ -30,7 +30,7 @@
     float: right;
     a {
       text-decoration: none;
-      color: $background-color-accent;
+      color: $light_blue;
     }
   }
 }

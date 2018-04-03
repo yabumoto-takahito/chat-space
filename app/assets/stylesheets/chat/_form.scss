@@ -3,8 +3,8 @@
   background-color: #DDDDDD;
   height: 90px;
   &__message {
-    background-color: white;
-    color: $color-chat-main;
+    background-color: $white;
+    color: $black;
     box-sizing: border-box;
     float: left;
     height: 50px;
@@ -14,7 +14,7 @@
     border: none;
   }
   &__icon {
-    background-color: white;
+    background-color: $white;
     float: left;
     height: 50px;
     padding-right: 10px;
@@ -25,7 +25,7 @@
     }
   }
   &__submit {
-    background-color: $background-color-accent;
+    background-color: $light_blue;
     color: #FFFFFF;
     font-size: 16px;
     height: 50px;

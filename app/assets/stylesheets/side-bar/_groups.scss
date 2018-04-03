@@ -1,5 +1,5 @@
 .groups {
-  background-color: #2f3e51;
+  background-color: $side_blue_light;
   height: calc(100vh - 100px);
   width: 260px;
   padding: 0 20px;
@@ -7,11 +7,11 @@
     width: 260px;
     padding: 20px 0;
     &__name {
-      color: $color-side-bar;
+      color: $white;
       font-size: 15px;
     }
     &__message {
-      color: $color-side-bar;
+      color: $white;
       font-size: 11px;
       margin-top: 5px;
     }
