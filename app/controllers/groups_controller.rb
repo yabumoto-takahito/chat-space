@@ -1,8 +1,5 @@
 class GroupsController < ApplicationController
-  def edit
-  end
-
-  def update
+  def index
   end
 
   def new
@@ -17,6 +14,12 @@ class GroupsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+  end
+
+  def update
   end
 
   private
