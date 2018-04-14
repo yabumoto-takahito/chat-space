@@ -1,19 +1,12 @@
-%ul.messages
-  %li.message
+.messages
+  .message
     .message__top
       .message__top--name
-        ryosukemaehira
+        = message.user.name
       .message__top--date
-        2016/10/02 06:27:07
+        / = format_posted_time(message.created_at)
     .message__bottom
-      .message__bottom--text
-        なるほど
-  %li.message
-    .message__top
-      .message__top--name
-        ryosukemaehira
-      .message__top--date
-        2016/10/02 06:27:14
-    .message__bottom
-      .message__bottom--text
-        なるほど
+      - if message.body.present?
+        %p.message__bottom--text
+          = message.body
+      = image_tag message.image.url, class: "message__bottom--image" if message.image.present?
