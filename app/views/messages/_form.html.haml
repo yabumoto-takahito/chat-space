@@ -1,5 +1,8 @@
 .form
-  %input{class: "form__message", placeholder: "type a message", name: "message", type: "text"}
-  .form__icon
-    %i.far.fa-image
-  %input{class: "form__submit", type: "submit", value: "Send"}
+  = form_for [@group, @message] do |f|
+    = f.text_field :body, class: "form__message", placeholder: "type a message"
+    .form__icon
+      = f.label :image, class: 'form__icon--image' do
+        = fa_icon "picture-o", class: "icon"
+        = f.file_field :image, class: "hidden"
+      = f.submit "Send", class: "form__submit"

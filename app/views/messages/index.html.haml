@@ -2,9 +2,9 @@
   .side-bar
     = render partial: "messages/side-bar"
   .content
-    .header
+    .content-header
       = render partial: "messages/header"
-    .message
-      = render partial: "messages/message"
-    .form
+    .content-messages
+      = render @messages
+    .content-bottom
       = render partial: "messages/form"

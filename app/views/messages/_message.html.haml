@@ -1,19 +1,11 @@
-%ul.messages
-  %li.message
-    .message__top
-      .message__top--name
-        ryosukemaehira
-      .message__top--date
-        2016/10/02 06:27:07
-    .message__bottom
-      .message__bottom--text
-        なるほど
-  %li.message
-    .message__top
-      .message__top--name
-        ryosukemaehira
-      .message__top--date
-        2016/10/02 06:27:14
-    .message__bottom
-      .message__bottom--text
-        なるほど
+.message
+  .message__top
+    .message__top--name
+      = message.user.name
+    .message__top--date
+      = message.created_at.strftime("%Y/%m/%d %H:%M")
+  .message__bottom
+    - if message.body.present?
+      %p.message__bottom--text
+        = message.body
+    = image_tag message.image.url, class: "message__bottom--image" if message.image.present?
