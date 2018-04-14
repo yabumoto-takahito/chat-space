@@ -1,9 +1,8 @@
-.messages {
+.content-messages {
   background-color: #FAFAFA;
-  height: calc(100vh - 100px - 90px);
-  border-top: solid 1px #eeeeee;
-  padding: 46px 0 0 40px;
-  margin-bottom: -46px;
+  height: calc(100vh - 90px - 100px - 46px);
+  overflow-y: scroll;
+  padding: 46px 40px 0;
   .message {
     margin-bottom: 40px;
     &__top {

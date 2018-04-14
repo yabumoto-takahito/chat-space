@@ -1,38 +1,42 @@
-.form {
-  display: flex;
+.content-bottom {
   background-color: #DDDDDD;
   height: 90px;
-  &__message {
-    background-color: $white;
-    color: $black;
-    box-sizing: border-box;
-    float: left;
-    height: 50px;
-    width: calc(100vw - 505.34px);
-    padding-left: 10px;
-    margin: 20px 0 20px 40px;
-    border: none;
-  }
-  &__icon {
-    background-color: $white;
-    float: left;
-    height: 50px;
-    padding-right: 10px;
-    margin: 20px 0;
-    .far {
-      line-height: 50px;
-      font-size: 20px;
+  width: 100%;
+  .form {
+    padding: 20px 40px;
+    &__message {
+      background-color: $white;
+      color: $black;
+      float: left;
+      height: 50px;
+      width: calc(100% - 150px);
+      padding-left: 10px;
+      border: none;
     }
-  }
-  &__submit {
-    background-color: $light_blue;
-    color: #FFFFFF;
-    font-size: 16px;
-    height: 50px;
-    line-height: 50px;
-    margin: 20px 40px 20px 15px;
-    padding: 0 20px;
-    float: right;
-    border: none;
+    &__icon {
+      height: 50px;
+      &--image {
+        background-color: $white;
+        float: left;
+        height: 50px;
+        padding-right: 10px;
+        .icon {
+          line-height: 50px;
+          font-size: 20px;
+        }
+        .hidden {
+        display: none;
+        }
+      }
+    }
+    &__submit {
+      background-color: $light_blue;
+      color: #FFFFFF;
+      font-size: 16px;
+      height: 50px;
+      padding: 0 20px;
+      float: right;
+      border: none;
+    }
   }
 }

@@ -1,12 +1,11 @@
-.messages
-  .message
-    .message__top
-      .message__top--name
-        = message.user.name
-      .message__top--date
-        / = format_posted_time(message.created_at)
-    .message__bottom
-      - if message.body.present?
-        %p.message__bottom--text
-          = message.body
-      = image_tag message.image.url, class: "message__bottom--image" if message.image.present?
+.message
+  .message__top
+    .message__top--name
+      = message.user.name
+    .message__top--date
+      / = format_posted_time(message.created_at)
+  .message__bottom
+    - if message.body.present?
+      %p.message__bottom--text
+        = message.body
+    = image_tag message.image.url, class: "message__bottom--image" if message.image.present?
