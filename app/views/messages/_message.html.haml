@@ -3,7 +3,7 @@
     .message__top--name
       = message.user.name
     .message__top--date
-      = message.created_at.strftime("%Y/%m/%d %H:%M")
+      = simple_time(message.created_at)
   .message__bottom
     - if message.body.present?
       %p.message__bottom--text
