@@ -3,7 +3,7 @@
     .message__top--name
       = message.user.name
     .message__top--date
-      = simple_time(message.created_at)
+      = message.created_at.to_s(:simple_time)
   .message__bottom
     - if message.body.present?
       %p.message__bottom--text
