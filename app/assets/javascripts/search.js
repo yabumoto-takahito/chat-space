@@ -15,6 +15,7 @@ $(function(){
                     ${user}
                   </p>
                 </div>`
+    search_list.append(html);
   }
 
   $('#user-search-field').on('keyup', function(){
