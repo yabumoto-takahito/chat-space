@@ -28,11 +28,12 @@ $(function(){
 
   $('#user-search-field').on('keyup', function(){
     var input = $('#user-search-field').val();
+    var groupId = $('#user-search-field').attr('data-id')
     if (input !== ''){
       $.ajax({
         type: 'GET',
         url: '/users',
-        data: { keyword: input },
+        data: { keyword: input, group_id: groupId },
         dataType: 'json'
       })
       .done(function(users){
