@@ -20,11 +20,11 @@ $(function(){
                   <p class='chat-group-user__name'>${userName}</p>
                   <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
                 </div>`
+    console.log(userId)
     user_list.append(html);
   }
   $('#user-search-field').on('keyup', function(){
     var input = $('#user-search-field').val();
-    console.log(input)
     $.ajax({
       type: 'GET',
       url: '/users',
@@ -46,13 +46,13 @@ $(function(){
       alert('ユーザー検索に失敗しました');
     });
   });
-  $('#user-search-result').on('click', 'chat-group-user__btn--add', function(){
+  $('#user-search-result').on('click', '.chat-group-user__btn--add', function(){
     var userId = $(this).data('user-id');
     var userName = $(this).data('user-name');
     appendGroupUser(userId, userName);
     $(this).parent().remove();
   });
-  $('#chat-group-users').on('click', 'chat-group-user__btn--remove', function(){
+  $('#chat-group-users').on('click', '.chat-group-user__btn--remove', function(){
     $(this).parent().remove();
   });
 });
