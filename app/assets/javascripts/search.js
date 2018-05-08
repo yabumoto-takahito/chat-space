@@ -20,7 +20,6 @@ $(function(){
                   <p class='chat-group-user__name'>${userName}</p>
                   <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
                 </div>`
-    console.log(userId)
     user_list.append(html);
   }
   $('#user-search-field').on('keyup', function(){
