@@ -1,13 +1,11 @@
 .header
   .left-header
     .left-header__title
-      sample
-    %ul.left-header__members
+      = @group.name
+    .left-header__members
       Members:
-      %li
-        seo
-      %li
-        neko
+      - @group.users.each do |user|
+        = user.name
   .right-header
     .right-header__button
-      = link_to "Edit", ""
+      = link_to "Edit", edit_group_path(@group)

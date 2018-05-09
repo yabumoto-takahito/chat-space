@@ -1,5 +1,19 @@
 class UsersController < ApplicationController
 
+  def index
+    if params[:group_id].present?
+      member_ids = Group.find(params[:group_id]).user_ids
+    else
+      member_ids = current_user.id
+    end
+    @users = User.where('name LIKE(?) && id != ?', "%#{params[:keyword]}%", member_ids)
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
+
+
   def edit
   end
 
