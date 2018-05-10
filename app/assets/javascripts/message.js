@@ -45,4 +45,16 @@ $(function(){
       alert('error');
     })
   })
+  setInterval(function(){
+    $.ajax({
+      url: location.href,
+      type: 'GET'
+      data:
+      dataType: 'json'
+    })
+    .done(function(data){
+    })
+    .fail(function(data){
+    })
+  }, 5000);
 });
