@@ -1,7 +1,7 @@
 $(function(){
   function buildHTML(message){
     var image = (message.image !== null) ? `<img src="${message.image}" class="message__bottom--image">` : "";
-    var html = `<div class="message">
+    var html = `<div class="message" data-message-id="${message.id}">
                   <div class="message__top">
                     <div class="message__top--name">
                       ${message.user_name}
@@ -46,15 +46,19 @@ $(function(){
     })
   })
   setInterval(function(){
+    var latest_id = ('.content-messages:last').data('message-id')
     $.ajax({
       url: location.href,
-      type: 'GET'
-      data:
+      type: 'GET',
+      data: { id : latest_id }
       dataType: 'json'
     })
-    .done(function(data){
+    .done(function(messages){
+      // messages.forEach(function(message){
+      //   var html = buildHTML(message)
+      })
     })
-    .fail(function(data){
+    .fail(function(){
     })
   }, 5000);
 });
