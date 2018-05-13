@@ -1,6 +1,8 @@
 $(function(){
+
   function buildHTML(message){
-    var image = (message.image !== null) ? `<img src="${message.image}" class="message__bottom--image">` : "";
+    var image = '';
+    image = (message.image !== null) ? `<img src="${message.image}" class="message__bottom--image">` : "";
     var html = `<div class="message" data-message-id="${message.id}">
                   <div class="message__top">
                     <div class="message__top--name">
@@ -21,6 +23,7 @@ $(function(){
                 </div>`
     return html;
   }
+
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -45,6 +48,7 @@ $(function(){
       alert('error');
     })
   })
+
   setInterval(function(){
     var latest_id = ('.content-messages:last').data('message-id')
     $.ajax({
@@ -54,8 +58,11 @@ $(function(){
       dataType: 'json'
     })
     .done(function(messages){
-      // messages.forEach(function(message){
-      //   var html = buildHTML(message)
+      var html = '';
+      messages.forEach(function(message){
+        html = buildHTML(message)
+        $('.content-messages').append(html)
+        $('.content-messages').animate({scrollTop: $('.content-messages')[0].scrollHeight}, 'fast');
       })
     })
     .fail(function(){
