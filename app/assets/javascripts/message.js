@@ -49,7 +49,8 @@ $(function(){
     })
   })
 
-  setInterval(function(){
+  var interval = setInterval(function(){
+    if (window.location.href.match(/\/groups\/\d+\/messages/)) {
     var latest_id = ('.content-messages:last').data('message-id')
     $.ajax({
       url: location.href,
@@ -67,5 +68,7 @@ $(function(){
     })
     .fail(function(){
     })
-  }, 5000);
+    } else {
+    clearInterval(interval);
+  }}, 5000);
 });
