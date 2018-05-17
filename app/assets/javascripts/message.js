@@ -50,25 +50,29 @@ $(function(){
   })
 
   var interval = setInterval(function(){
+    var latest_id = $('.message:last').data('message-id')
     if (window.location.href.match(/\/groups\/\d+\/messages/)) {
-    var latest_id = ('.content-messages:last').data('message-id')
-    $.ajax({
-      url: location.href,
-      type: 'GET',
-      data: { id : latest_id }
-      dataType: 'json'
-    })
-    .done(function(messages){
-      var html = '';
-      messages.forEach(function(message){
-        html = buildHTML(message)
-        $('.content-messages').append(html)
-        $('.content-messages').animate({scrollTop: $('.content-messages')[0].scrollHeight}, 'fast');
+      $.ajax({
+        url: location.href,
+        type: 'GET',
+        data: { id : latest_id },
+        dataType: 'json'
       })
-    })
-    .fail(function(){
-    })
-    } else {
-    clearInterval(interval);
-  }}, 5000);
+      .done(function(messages){
+        var html = '';
+        messages.forEach(function(message){
+          if (message.id > latest_id ){
+            html = buildHTML(message)
+            $('.content-messages').append(html)
+            $('.content-messages').animate({scrollTop: $('.content-messages')[0].scrollHeight}, 'fast');
+          }
+        })
+      })
+      .fail(function(){
+      })
+    }
+    else {
+      clearInterval(interval);
+    }
+  }, 5000);
 });
