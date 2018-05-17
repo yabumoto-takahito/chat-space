@@ -61,11 +61,9 @@ $(function(){
       .done(function(messages){
         var html = '';
         messages.forEach(function(message){
-          if (message.id > latest_id ){
-            html = buildHTML(message)
-            $('.content-messages').append(html)
-            $('.content-messages').animate({scrollTop: $('.content-messages')[0].scrollHeight}, 'fast');
-          }
+          html = buildHTML(message)
+          $('.content-messages').append(html)
+          $('.content-messages').animate({scrollTop: $('.content-messages')[0].scrollHeight}, 'fast');
         })
       })
       .fail(function(){
