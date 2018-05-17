@@ -1,7 +1,9 @@
 $(function(){
+
   function buildHTML(message){
-    var image = (message.image !== null) ? `<img src="${message.image}" class="message__bottom--image">` : "";
-    var html = `<div class="message">
+    var image = '';
+    image = (message.image !== null) ? `<img src="${message.image}" class="message__bottom--image">` : "";
+    var html = `<div class="message" data-message-id="${message.id}">
                   <div class="message__top">
                     <div class="message__top--name">
                       ${message.user_name}
@@ -21,6 +23,7 @@ $(function(){
                 </div>`
     return html;
   }
+
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -45,4 +48,29 @@ $(function(){
       alert('error');
     })
   })
+
+  var interval = setInterval(function(){
+    var latest_id = $('.message:last').data('message-id')
+    if (location.pathname.match(/\/groups\/\d+\/messages/)) {
+      $.ajax({
+        url: location.href,
+        type: 'GET',
+        data: { id : latest_id },
+        dataType: 'json'
+      })
+      .done(function(messages){
+        var html = '';
+        messages.forEach(function(message){
+          html = buildHTML(message)
+          $('.content-messages').append(html)
+          $('.content-messages').animate({scrollTop: $('.content-messages')[0].scrollHeight}, 'fast');
+        })
+      })
+      .fail(function(){
+      })
+    }
+    else {
+      clearInterval(interval);
+    }
+  }, 5000);
 });
